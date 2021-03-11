@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "planning-poker-b5256": {
+      "hosting": {
+        "planning-poker": [
+          "planning-poker-b5256"
+        ]
+      }
+    }
+  }
+}

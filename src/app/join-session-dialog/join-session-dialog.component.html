@@ -1,0 +1,3 @@
+<mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let session of sessions | async" (click)="join(session)" [value]="session">{{session.friendly_name}}</mat-list-option>
+</mat-selection-list>
