@@ -31,6 +31,9 @@ import { SessionComponent } from './session/session.component';
 import { sessionReducer } from './state/session/session.reducer';
 import { SessionEffects } from './state/session/session.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AuthComponent } from './auth/auth.component';
+import { authReducer } from './state/auth/auth.reducer';
+import { AuthEffects } from './state/auth/auth.effects';
 
 
 @NgModule({
@@ -40,14 +43,15 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     SessionComponent,
     CreateSessionDialogComponent,
     JoinSessionDialogComponent,
-    HomeComponent
+    HomeComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
-    EffectsModule.forRoot([SessionEffects]),
+    EffectsModule.forRoot([SessionEffects, AuthEffects]),
     FormsModule,
     MatButtonModule,
     MatDialogModule,
@@ -55,7 +59,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MatListModule,
     MatSnackBarModule,
     MatToolbarModule,
-    StoreModule.forRoot({session: sessionReducer}, {}),
+    StoreModule.forRoot({session: sessionReducer, auth: authReducer}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth.service';
 import { Session } from './types';
 
 @Component({
@@ -6,10 +7,16 @@ import { Session } from './types';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'planning-poker';
   currentSession = {} as Session;
 
-  constructor() {}
+  constructor(private authService: AuthService) {
+    
+  }
+
+  ngOnInit() {
+    this.authService.watchAuthStateChange();
+  }
 
 }
