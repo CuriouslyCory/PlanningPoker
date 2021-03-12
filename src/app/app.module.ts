@@ -19,21 +19,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { CreateSessionDialogComponent } from './create-session-dialog/create-session-dialog.component';
-import { JoinSessionDialogComponent } from './join-session-dialog/join-session-dialog.component';
-import { HomeComponent } from './home/home.component';
+import { CreateSessionDialogComponent } from './dialogs/create-session-dialog/create-session-dialog.component';
+import { JoinSessionDialogComponent } from './dialogs/join-session-dialog/join-session-dialog.component';
+import { HomeComponent } from './pages/home/home.component';
 
 // ngrx => store
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { CreateJoinComponent } from './create-join/create-join.component';
-import { PlanningSessionComponent } from './planning-session/planning-session.component';
+import { CreateJoinComponent } from './components/create-join/create-join.component';
+import { PlanningSessionComponent } from './pages/planning-session/planning-session.component';
 import { planningSessionReducer } from './state/planning-session/planning-session.reducer';
 import { PlanningSessionEffects } from './state/planning-session/planning-session.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AuthComponent } from './auth/auth.component';
+import { AuthComponent } from './components/auth/auth.component';
 import { authReducer } from './state/auth/auth.reducer';
 import { AuthEffects } from './state/auth/auth.effects';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AuthEffects } from './state/auth/auth.effects';
     CreateSessionDialogComponent,
     JoinSessionDialogComponent,
     HomeComponent,
-    AuthComponent
+    AuthComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

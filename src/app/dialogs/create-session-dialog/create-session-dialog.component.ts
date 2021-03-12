@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { addPlanningSession } from '../state/planning-session/planning-session.actions';
+import { addPlanningSession } from '../../state/planning-session/planning-session.actions';
 
 @Component({
   selector: 'app-create-session-dialog',

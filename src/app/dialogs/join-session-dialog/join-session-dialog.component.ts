@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PlanningSession } from '../types';
+import { PlanningSession } from '../../types';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import * as SessionActions from '../state/planning-session/planning-session.actions'
+import * as SessionActions from '../../state/planning-session/planning-session.actions'
 
 export interface DialogData {
   sessions: Observable<PlanningSession[]>

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store, select } from '@ngrx/store';
-import { CreateSessionDialogComponent } from '../create-session-dialog/create-session-dialog.component';
-import { JoinSessionDialogComponent } from '../join-session-dialog/join-session-dialog.component';
+import { CreateSessionDialogComponent } from '../../dialogs/create-session-dialog/create-session-dialog.component';
+import { JoinSessionDialogComponent } from '../../dialogs/join-session-dialog/join-session-dialog.component';
 
-import { planningSessionsSelector} from '../state/planning-session/planning-session.selectors';
-import { retrievePlanningSessionList, addPlanningSession } from '../state/planning-session/planning-session.actions';
+import { planningSessionsSelector} from '../../state/planning-session/planning-session.selectors';
+import { retrievePlanningSessionList, addPlanningSession } from '../../state/planning-session/planning-session.actions';
 
-import { PlanningSession } from '../types'
+import { PlanningSession } from '../../types'
 import { Observable } from 'rxjs';
-import { AppState } from '../state/app.state';
+import { AppState } from '../../state/app.state';
 
 
 @Component({

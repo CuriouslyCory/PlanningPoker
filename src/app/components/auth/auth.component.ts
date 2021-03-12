@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Store } from '@ngrx/store';
-import * as AuthActions from '../state/auth/auth.actions';
+import * as AuthActions from '../../state/auth/auth.actions';
 
 @Component({
   selector: 'app-auth',

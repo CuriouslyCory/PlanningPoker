@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanningSession } from '../types';
+import { PlanningSession } from '../../types';
 
 @Component({
   selector: 'app-home',
