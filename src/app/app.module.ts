@@ -27,7 +27,7 @@ import { HomeComponent } from './home/home.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { CreateJoinComponent } from './create-join/create-join.component';
-import { SessionComponent } from './session/session.component';
+import { PlanningSessionComponent } from './planning-session/planning-session.component';
 import { sessionReducer } from './state/session/session.reducer';
 import { SessionEffects } from './state/session/session.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -40,7 +40,7 @@ import { AuthEffects } from './state/auth/auth.effects';
   declarations: [
     AppComponent,
     CreateJoinComponent,
-    SessionComponent,
+    PlanningSessionComponent,
     CreateSessionDialogComponent,
     JoinSessionDialogComponent,
     HomeComponent,
