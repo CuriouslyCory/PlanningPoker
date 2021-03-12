@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Session, User } from '../types';
+import { PlanningSession, User } from '../types';
 import firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SessionService {
+export class PlanningSessionService {
 
-  private sessionDoc: AngularFirestoreDocument<Session>;
+  private sessionDoc: AngularFirestoreDocument<PlanningSession>;
   private currentUser: User ;
 
   constructor( private afs: AngularFirestore) { 
@@ -17,26 +17,26 @@ export class SessionService {
   }
 
   create(name: string) {
-    const newSession = {
+    const newPlanningSession = {
       friendly_name: name,
       created_by: this.currentUser,
       created: new Date(),
       members: [this.currentUser.name]
-    } as Session;
+    } as PlanningSession;
 
-    this.afs.collection<Session>('planning-session').add(newSession);
+    this.afs.collection<PlanningSession>('planning-session').add(newPlanningSession);
   }
 
-  join(session: Session): Promise<void> {
-    const sessionDoc = this.afs.collection('planning-session/').doc(session.doc_id);
-    console.log(session.members);
+  join(planningSession: PlanningSession): Promise<void> {
+    const sessionDoc = this.afs.collection('planning-session/').doc(planningSession.doc_id);
+    console.log(planningSession.members);
     return sessionDoc.update({
       members: firebase.firestore.FieldValue.arrayUnion('SueBob')
     });
   }
 
-  getSessions(): Observable<Session[]> {
+  getPlanningSessions(): Observable<PlanningSession[]> {
     console.info('Called getSessions');
-    return this.afs.collection<Session>('planning-session').valueChanges();
+    return this.afs.collection<PlanningSession>('planning-session').valueChanges();
   }
 }

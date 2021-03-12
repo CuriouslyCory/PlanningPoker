@@ -1,11 +1,11 @@
-import { Session, User } from '../types';
+import { PlanningSession, User } from '../types';
 
-export interface SessionState {
-    currentSession: Session;
-    sessions: Session[];
+export interface PlanningSessionState {
+    currentPlanningSession: PlanningSession;
+    planningSessions: PlanningSession[];
 }
 
 export interface AppState {
-    session: SessionState,
+    planningSession: PlanningSessionState,
     user: User
 }

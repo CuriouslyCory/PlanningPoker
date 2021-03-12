@@ -4,10 +4,10 @@ import { Store, select } from '@ngrx/store';
 import { CreateSessionDialogComponent } from '../create-session-dialog/create-session-dialog.component';
 import { JoinSessionDialogComponent } from '../join-session-dialog/join-session-dialog.component';
 
-import { sessionsSelector} from '../state/session/session.selectors';
-import { retrieveSessionList, addSession } from '../state/session/session.actions';
+import { planningSessionsSelector} from '../state/planning-session/planning-session.selectors';
+import { retrievePlanningSessionList, addPlanningSession } from '../state/planning-session/planning-session.actions';
 
-import { Session } from '../types'
+import { PlanningSession } from '../types'
 import { Observable } from 'rxjs';
 import { AppState } from '../state/app.state';
 
@@ -18,12 +18,12 @@ import { AppState } from '../state/app.state';
   styleUrls: ['./create-join.component.scss']
 })
 export class CreateJoinComponent implements OnInit {
-  sessions$: Observable<Session[]> = this.store.select(sessionsSelector);
+  sessions$: Observable<PlanningSession[]> = this.store.select(planningSessionsSelector);
 
   constructor(public dialog: MatDialog, private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(retrieveSessionList());
+    this.store.dispatch(retrievePlanningSessionList());
     //this.sessionService.getSessions()
     //  .subscribe((Session) => this.store.dispatch(retrieveSessionList({ Session })));
   }

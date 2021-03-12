@@ -28,8 +28,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { CreateJoinComponent } from './create-join/create-join.component';
 import { PlanningSessionComponent } from './planning-session/planning-session.component';
-import { sessionReducer } from './state/session/session.reducer';
-import { SessionEffects } from './state/session/session.effects';
+import { planningSessionReducer } from './state/planning-session/planning-session.reducer';
+import { PlanningSessionEffects } from './state/planning-session/planning-session.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthComponent } from './auth/auth.component';
 import { authReducer } from './state/auth/auth.reducer';
@@ -51,7 +51,7 @@ import { AuthEffects } from './state/auth/auth.effects';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
-    EffectsModule.forRoot([SessionEffects, AuthEffects]),
+    EffectsModule.forRoot([StoreDevtoolsModule, AuthEffects]),
     FormsModule,
     MatButtonModule,
     MatDialogModule,
@@ -59,7 +59,7 @@ import { AuthEffects } from './state/auth/auth.effects';
     MatListModule,
     MatSnackBarModule,
     MatToolbarModule,
-    StoreModule.forRoot({session: sessionReducer, auth: authReducer}, {}),
+    StoreModule.forRoot({planningSession: planningSessionReducer, auth: authReducer}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],

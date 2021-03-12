@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { addSession } from '../state/session/session.actions';
+import { addPlanningSession } from '../state/planning-session/planning-session.actions';
 
 @Component({
   selector: 'app-create-session-dialog',
@@ -9,7 +9,7 @@ import { addSession } from '../state/session/session.actions';
 })
 export class CreateSessionDialogComponent implements OnInit {
 
-  public session_name: string; 
+  public planningSessionName: string; 
 
   constructor(private store: Store) { }
 
@@ -17,7 +17,7 @@ export class CreateSessionDialogComponent implements OnInit {
   }
 
   create() {
-    const session_name = this.session_name;
-    this.store.dispatch(addSession({session_name}));
+    const planningSessionName = this.planningSessionName;
+    this.store.dispatch(addPlanningSession({planningSessionName}));
   }
 }

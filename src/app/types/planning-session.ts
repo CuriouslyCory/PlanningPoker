@@ -1,6 +1,6 @@
-import { User } from '../types'
+import { User } from '.'
 
-export interface Session {
+export interface PlanningSession {
     doc_id?: string
     friendly_name: string
     created: Date

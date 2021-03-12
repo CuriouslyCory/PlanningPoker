@@ -1,12 +1,12 @@
 import { Component, Inject, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Session } from '../types';
+import { PlanningSession } from '../types';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import * as SessionActions from '../state/session/session.actions'
+import * as SessionActions from '../state/planning-session/planning-session.actions'
 
 export interface DialogData {
-  sessions: Observable<Session[]>
+  sessions: Observable<PlanningSession[]>
 }
 
 @Component({
@@ -16,7 +16,7 @@ export interface DialogData {
 })
 export class JoinSessionDialogComponent implements OnInit {
 
-  sessions: Observable<Session[]>;
+  sessions: Observable<PlanningSession[]>;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private store: Store) {
     this.sessions = data.sessions;
@@ -25,8 +25,8 @@ export class JoinSessionDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  join(session: Session) {
-    this.store.dispatch(SessionActions.joinSession({session: session}))
+  join(planningSession: PlanningSession) {
+    this.store.dispatch(SessionActions.joinPlanningSession({planningSession}))
   }
 
 }

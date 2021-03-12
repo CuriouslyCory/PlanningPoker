@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Session } from './types';
+import { PlanningSession } from './types';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { Session } from './types';
 })
 export class AppComponent implements OnInit{
   title = 'planning-poker';
-  currentSession = {} as Session;
+  currentSession = {} as PlanningSession;
 
   constructor(private authService: AuthService) {
     

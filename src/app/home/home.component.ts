@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Session } from '../types';
+import { PlanningSession } from '../types';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,7 @@ import { Session } from '../types';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  currentSession = {} as Session;
+  currentSession = {} as PlanningSession;
 
   constructor() { }
 
